@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="szczesliwezamowienie" translate="label" sortOrder="10">
+            <label>Zaliczenie</label>
+        </tab>
+        <section id="szczesliwezamowienie" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+
+            <class>Zaliczenie\SzczesliweZamowienie\Model\Config\Section</class>
+            <label>SzczesliweZamowienie</label>
+            <tab>szczesliwezamowienie</tab>
+            <resource>Zaliczenie_SzczesliweZamowienie::config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable or disable the module.</comment>
+                </field>
+                <field id="minimum_order_amount" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Minimum Order Amount</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                    <comment>Set the minimum order amount for the contest.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
